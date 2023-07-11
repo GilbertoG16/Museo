@@ -1,0 +1,48 @@
+{
+  "expo": {
+    "name": "museo",
+    "slug": "museo",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true,
+      "config":{
+        "usesNonExemptEncryption": false
+      },
+      "infoPlist": {
+        "NSFaceIDUsageDescription" : "Necesitamos acceso viejito",
+        "NSCriticalAlertHandling" : {
+          "enabled":true
+        }
+        
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "e59ade35-f43d-4a92-9667-48406e8b8a7a"
+      }
+    }
+  }
+}
+
+
+
