@@ -7,6 +7,12 @@ const Registro = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
+  /*-- Agregados :) --*/
+  const [name, setName] = useState('');
+  const [last_name, setLast_Name] = useState('');
+  const [identification, setIdentification] = useState('');
+  const [birth_date, setBirth_date] = useState('');
+  
 
   const onChangeUsername = (text) => {
     setUsername(text);
@@ -19,6 +25,23 @@ const Registro = () => {
   const onChangePassword = (text) => {
     setPassword(text);
   };
+
+  const onChangeName= (text) => {
+    setName(text);
+  };
+
+  const onChangeLast_Name = (text) => {
+    setLast_Name(text);
+  };
+
+  const onChangeIdentification = (text) => {
+    setIdentification(text);
+  };
+
+  const onChangeBirth_date = (text) => {
+    setBirth_date(text);
+  };
+
 
   const onChangeConfirmPassword = (text) => {
     setConfirmPassword(text);
@@ -35,12 +58,16 @@ const Registro = () => {
     return;
   }
 
-  AuthService.register(username, email, password)
+  AuthService.register(username, email, password, name, last_name, identification, birth_date)
     .then(() => {
       setUsername('');
       setEmail('');
       setPassword('');
       setConfirmPassword('');
+      setName('');
+      setLast_Name('');
+      setIdentification('');
+      setBirth_date('');
       Alert.alert('Registro exitoso', '¡Te has registrado correctamente!');
     })
     .catch((error) => {
@@ -81,6 +108,34 @@ const Registro = () => {
         secureTextEntry
         value={confirmPassword}
         onChangeText={onChangeConfirmPassword}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="nombre"
+       
+        value={name}
+        onChangeText={onChangeName}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Apellido"
+   
+        value={last_name}
+        onChangeText={onChangeLast_Name}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="cédula"
+      
+        value={identification}
+        onChangeText={onChangeIdentification}
+      />
+      <TextInput
+        style={styles.input}
+        placeholder="Cumpleaños"
+      
+        value={birth_date}
+        onChangeText={onChangeBirth_date}
       />
       <TouchableOpacity style={styles.button} onPress={handleRegister}>
         <Text style={styles.buttonText}>Registrarse</Text>

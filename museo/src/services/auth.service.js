@@ -1,11 +1,11 @@
 import * as SecureStore from 'expo-secure-store';
 import axios from 'axios';
 
-const API_URL = 'http://172.29.34.134:8080/api/auth/';
-const API_PERFIL = 'http://172.29.34.134:8080/api/';
+const API_URL = 'http://192.168.0.17:8080/api/auth/';
+const API_PERFIL = 'http://192.168.0.17:8080/api/';
 
-const register = (username, email, password) => {
-  return axios.post(API_URL + 'signup', { username, email, password });
+const register = (username, email, password, name, last_name, identification, birth_date) => {
+  return axios.post(API_URL + 'signup', { username, email, password,name, last_name, identification, birth_date });
 };
 
 const login = async (username, password) => {
@@ -88,6 +88,9 @@ const AuthService = {
 };
 
 export default AuthService;
+
+
+
 
 
 
